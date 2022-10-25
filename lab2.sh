@@ -1,4 +1,23 @@
 #!/bin/zsh
+main() {
+
+    line=$(head -n 1 $1)
+    echo "Please choose from one of the following options: (enter an integer)\n"
+    echo "1) Days from now until Lab1's Due Date\n"
+    echo "2) Days from now until Lab2's Due Date\n"
+    echo "3) Days from now until Lab3's Due Date\n"
+    echo "4) Days from now until Lab4's Due Date\n"
+    echo "5) Custom Date\n"
+    echo "Select 0 to end the program.\n"
+    
+    if [ "$line" > "0" ] && [ "$line" < "5" ];
+    then {lab_days}
+    elif [ "$line" -eq "5" ];
+    then {custom_date}
+    elif [ "$line" -eq "0" ];
+    then {exit 1}
+    fi;
+}
 
 lab_days(){
 
@@ -38,25 +57,4 @@ read B
 echo $(( ($(date -d $B +%s) - $(date -d $A +%s)) / 86400 )) days
 }
 
-main() {
-
-    filename=$1
-    while read line; do
-    echo "Please choose from one of the following options: (enter an integer)\n"
-    echo "1) Days from now until Lab1's Due Date\n"
-    echo "2) Days from now until Lab2's Due Date\n"
-    echo "3) Days from now until Lab3's Due Date\n"
-    echo "4) Days from now until Lab4's Due Date\n"
-    echo "5) Custom Date\n"
-    echo "Select 0 to end the program.\n"
-    
-    if [ "$line" > "0" ] && [ "$line" < "5" ];
-    then {lab_days}
-    elif [ "$line" -eq "5" ];
-    then {custom_date}
-    elif [ "$line" -eq "0" ];
-    then {exit 1}
-    fi;
-    done
-}
 main
