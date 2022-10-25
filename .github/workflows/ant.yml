@@ -22,4 +22,6 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Build with Ant
-      run: ant -noinput -buildfile build.xml
+      run: javac Lab2.java
+    - name: Run my Java
+      run: java Lab2
