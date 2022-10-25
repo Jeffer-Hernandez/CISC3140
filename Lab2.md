@@ -1,4 +1,19 @@
-## Lab2 exercises!
+## Lab2 Reflections
+
+### Instructions
+1. To run the *Java* program, in the terminal from within our directory (CISC3140):
+- sh build.sh      
+
+2. To run the `Dates` *Bash* Script
+- sh lab2.sh
+
+3. To run an individual *AWK* script:
+- ./ScriptName.awk Squirrel_Census.csv   
+
+`Example:`
+```
+./Q4Script.awk Squirrel_Census.csv   
+```
 
 ### Java vs. Bash
 > Were you successful in recreating the same program features as before? Why or why not?
@@ -25,37 +40,30 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 ```
 I used these imports to complete my `Java` program. I suppose it is possible to implement my solution from scratch, but it would have added another layer of complexity and **a lot more** time.
-### Shell Script vs Makefile
->To calculate a mortgage payment, what types would you use
-for the rate, principal, and payment? Explain why you selected each type.
 
-I would use `double` or `float`. I would use a double or a float. Rates, payments, and figures relating to money, usually have decimal points.
+### Bash vs Make
+
+> The differences between `Bash` and `Make` are mostly in their syntax. With `Bash` script, it is more like writing code, and following a workflow with a given set of variables and control structures. Whereas `Make` seems to be more of form that needs filling out. We use the built-in functions to tell the file what we want to do, and the files and functions we will use to do it, in a pretty straight forward way. It seems easier to use `Make` although I read on several forums that it is not usually used with `Java`.
+
+> The fact that we are able to compile and run seperate programs with relatively little code and a lot of autonomy as to when or how a program should be run, makes these two tools/languages very similar to use.
+
+> I believe it is easy to compile and run files using both tools. However, `Bash` seems to be a more versatile tool to operate on variables, loop through arrays, and other functional tasks. I personally didn't see any documentation for writing functions in a `Makefile`.
 
 ### AWK Exercise
 
-> The AWK assignment was challenging yet interesting. I learned about alot tools that VSCode offers
-to filter CSV files. You can enter a command to filter the data before including it in your script
-to get a feedback a bit quicker.
+> The AWK assignment was challenging yet interesting. I learned about alot tools that VSCode offers to filter CSV files. You can enter a command to filter  the data before including it in your scriptto get a feedback a bit quicker. I initially wanted to use JSON since I have had experience using it in web development. However, there seemed to be more setup time and code complexity increased as well. 
 
+> I opend my CSV file in my VSCode window, and typed commands to filter the data so that I could get a sense of what my script would look like. I had to learn about AWK's built in functions and workflow to get my program working. Since I had a CSV file, I used the "," as a field seperator. Each of my scripts, loops through all the data for some operation on each row, so I would first test my loop to see if I was looking in the correct column. 
 
-```cpp
-unsigned u = 10, u2 = 42;
-std::cout << u2 - u << std::endl;
-std::cout << u - u2 << std::endl;
-int i = 10, i2 = 42;
-std::cout << i2 - i << std::endl;
-std::cout << i - i2 << std::endl;
-std::cout << i - u << std::endl;
-std::cout << u - i << std::endl;
+> After establishing the correct column I would declare variables that would hold values of interst to my program. Then search for the value i wanted in each row, and operate on my current value, etc.
+
+>Finally printing my output to the terminal so that the user has some sense of confirmation, as well as providing the information that queried.
+
+### Sample while loop for getting specific values from the data in each row.
 ```
-
-Output(g++ 4.8):
-
-```
-32
-4294967264
-32
--32
-0
-0
+do {
+    if ($8 ~ /Adult/) a++;
+    if ($8 ~ /Juvenile/) j++;
+}
+while(getline != 0)
 ```
