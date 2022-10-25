@@ -22,7 +22,7 @@ public class Lab2 {
                 Period dif  = lab_days(ans);
                 System.out.println(dif);
                 break;
-            }else if (ans == 6){
+            }else if (ans == 5){
                 System.out.println("Please enter two dates in the MM/DD/YYYY format\n");
                 String date1 = keyboard.nextLine();
                 String date2 = keyboard.nextLine();
