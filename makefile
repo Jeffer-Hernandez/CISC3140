@@ -1,18 +1,24 @@
-# define compiler and compiler flag variables
-JFLAGS=-g
-JC=javac
-.SUFFIXES:.java.class
+JFLAGS = -g
+JC = javac
+JVM= java
+FILE=
+.SUFFIXES: .java .class
 .java.class:
-		$(JC) $(JFLAGS) $*.java
-
+	$(JC) $(JFLAGS) $*.java
 CLASSES = \
-		CISC3140/Lab2.java\
+	Lab2.java \
 
-# the default make target entry
+
+MAIN = Main
+
 default: classes
-classes: $(CLASSES:.java=.class)
-clean:
-		$(RM) *.class
 
+classes: $(CLASSES:.java=.class)
+
+run: $(MAIN).class
+	$(JVM) $(MAIN)
+
+clean:
+	$(RM) *.class
 
 
