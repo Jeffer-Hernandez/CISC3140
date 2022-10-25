@@ -25,3 +25,17 @@ jobs:
       run: javac Lab2.java
     - name: Run my Java
       run: java Lab2
+    - name: Run Build script
+      run: sh build.sh     
+    - name: Run Make file
+      run: make
+    - name: Run AWK Script 1
+      run: ./Q1Script.awk Squirrel_Census.csv
+    - name: Run AWK Script 2
+      run: ./Q2Script.awk Squirrel_Census.csv
+    - name: Run AWK Script 3
+      run: ./Q3Script.awk Squirrel_Census.csv
+    - name: Run AWK Script 4
+      run: ./Q4Script.awk Squirrel_Census.csv
+    - name: Run AWK Script 5
+      run: ./Q5Script.awk Squirrel_Census.csv
