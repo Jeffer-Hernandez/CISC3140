@@ -17,7 +17,11 @@ I would use `double` or `float`. I would use a double or a float. Rates, payment
 
 ### AWK Exercise
 
-> What output will the following code produce?
+> The AWK assignment was challenging yet interesting. I learned about alot tools that VSCode offers
+to filter CSV files. You can enter a command to filter the data before including it in your script
+to get a feedback a bit quicker.
+
+
 ```cpp
 unsigned u = 10, u2 = 42;
 std::cout << u2 - u << std::endl;
