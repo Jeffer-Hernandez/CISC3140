@@ -1,13 +1,17 @@
 import java.time.*;
 import java.util.*;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 public class Lab2 {  
-   public static void main(String[] args) throws ParseException
-    {   Scanner keyboard = new Scanner(System.in);
+   public static void main(String[] args) throws ParseException, FileNotFoundException
+    {   
+        File file = new File("data.txt");
+        Scanner sc = new Scanner(file);
 
         System.out.println("Please choose from one of the following options: (enter an integer)\n");
         System.out.println("1) Days from now until Lab1's Due Date\n");
@@ -16,22 +20,24 @@ public class Lab2 {
         System.out.println("4) Days from now until Lab4's Due Date\n");
         System.out.println("5) Custom Date\n");
         System.out.println("Select 0 to end the program.\n");
-        int ans  = keyboard.nextInt();
-        while (ans != 0){
+
+        while (sc.hasNextLine()){
+            int ans = sc.nextInt();
+            
             if (ans > 0 && ans < 5){
                 Period dif  = lab_days(ans);
                 System.out.println(dif);
                 break;
             }else if (ans == 5){
                 System.out.println("Please enter two dates in the MM/DD/YYYY format\n");
-                String date1 = keyboard.nextLine();
-                String date2 = keyboard.nextLine();
+                String date1 = sc.nextLine();
+                String date2 = sc.nextLine();
                 Long dif = date_diff(date1, date2);
                 System.out.println(dif);
                 break;
             }
         }
-        keyboard.close();
+        sc.close();
     }
 
     public static Period lab_days(int ans)
