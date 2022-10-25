@@ -48,7 +48,7 @@ main() {
     read $1
     if [ $1 > 0 ] && [ $1 < 5 ];
     then
-        lab_days
+        lab_days;
     elif [ "$1" == "5" ];
     then
         custom_date;
