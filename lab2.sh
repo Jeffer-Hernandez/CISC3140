@@ -1,9 +1,10 @@
 #!/bin/zsh
+
 lab_days(){
 
 d= $(date +%Y-%m-%d)
 
-case $1 in
+case $line in
 
 1)
 lab1="2022-9-28"
@@ -35,9 +36,12 @@ echo "Enter two dates seprately"
 read A
 read B
 echo $(( ($(date -d $B +%s) - $(date -d $A +%s)) / 86400 )) days
-
 }
+
 main() {
+
+    filename=$1
+    while read line; do
     echo "Please choose from one of the following options: (enter an integer)\n"
     echo "1) Days from now until Lab1's Due Date\n"
     echo "2) Days from now until Lab2's Due Date\n"
@@ -45,17 +49,14 @@ main() {
     echo "4) Days from now until Lab4's Due Date\n"
     echo "5) Custom Date\n"
     echo "Select 0 to end the program.\n"
-    read $1
-    if [ $1 > 0 ] && [ $1 < 5 ];
-    then
-        lab_days;
-    elif [ "$1" == "5" ];
-    then
-        custom_date;
-    elif [ "$1" == "0" ];
-    then
-        exit 1
-    fi
+    
+    if [ "$line" > "0" ] && [ "$line" < "5" ];
+    then {lab_days}
+    elif [ "$line" -eq "5" ];
+    then {custom_date}
+    elif [ "$line" -eq "0" ];
+    then {exit 1}
+    fi;
+    done
 }
-
 main

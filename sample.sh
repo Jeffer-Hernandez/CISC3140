@@ -1,10 +1,10 @@
 #!/bin/zsh
 
-# for the Java program
-compile
-run
+# functions for build.sh (bash script)
+source build.sh && compile
+source build.sh && run
 
 # for the Date bash script
-source lab2.sh && main
+source lab2.sh && main "$(<data.txt)"
 
 
