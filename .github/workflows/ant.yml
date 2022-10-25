@@ -34,7 +34,7 @@ jobs:
     - name: Run AWK Script 2
       run: GAWK_Assignment/Q2Script.awk GAWK_Assignment/Squirrel_Census.csv
     - name: Run AWK Script 3
-      run: GAWK_Assignment/Q3Script.awk GAWK_Assignment/quirrel_Census.csv
+      run: GAWK_Assignment/Q3Script.awk GAWK_Assignment/Squirrel_Census.csv
     - name: Run AWK Script 4
       run: GAWK_Assignment/Q4Script.awk GAWK_Assignment/Squirrel_Census.csv
     - name: Run AWK Script 5
